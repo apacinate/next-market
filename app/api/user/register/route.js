@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import supabase from "../../../utils/database"
 
-export async function POST(request, context) {
+export async function POST(request) {
     const reqBody = await request.json()
     //const params = await context.params
 

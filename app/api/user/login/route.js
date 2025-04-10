@@ -2,9 +2,8 @@ import { NextResponse } from "next/server"
 import supabase from "../../../utils/database"
 import { SignJWT } from "jose"
 
-export async function POST(request, context) {
+export async function POST(request) {
     const reqBody = await request.json()
-    //const params = await context.params
 
     try{
         const { data, error }= await supabase.from("users").select().eq("email", reqBody.email).single()
