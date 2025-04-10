@@ -3,7 +3,7 @@ import supabase from "../../../utils/database"
 
 export async function POST(request, context) {
     const reqBody = await request.json()
-    const params = await context.params
+    //const params = await context.params
 
     try{
         const { data, error }= await supabase.from("users").insert(reqBody)
