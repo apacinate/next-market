@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic'
 // アイテムの型定義
 interface Item {
   id: string;
-  image: Object;
+  image: object;
   price: number;
   title: string;
   description: string;
