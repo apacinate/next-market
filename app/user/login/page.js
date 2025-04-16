@@ -28,6 +28,9 @@ const Login = () => {
     }
     return(
         <div>
+            <title>ログインページ</title>
+            <meta name="description" content="ログインページです"/>
+            
             <h1 className="pag-title">ログイン</h1>
             <form onSubmit={(handleSubmit)}>
                 <input value={email} onChange={(e)=>setEmail(e.target.value)} type="text" name="email" placeholder="メールアドレス"required/>

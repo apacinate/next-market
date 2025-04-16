@@ -33,8 +33,7 @@ const UpdateItem = (props) => {
         }
     }
     
-    console.log("loginUserEmail",loginUserEmail)
-    console.log("props.singleItem.email",props.singleItem[0].email)
+
     if(loginUserEmail === props.singleItem[0].email){
         return (
             <div>
