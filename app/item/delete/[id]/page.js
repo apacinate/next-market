@@ -1,5 +1,5 @@
 import Form from "./form"
-import { getSingleItem } from "../../readsingle/[id]/page"
+import { getSingleItem } from "../../../utils/getSingleItem"
 
 const DeleteItem = async(context)=>{
     const params = await context.params
