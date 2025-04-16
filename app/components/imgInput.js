@@ -15,7 +15,8 @@ const ImgInput =(props) =>{
                 const jsonData = await response.json()
                 await props.setImage(jsonData.url)
                 alert("画像アップロード成功")
-            } catch {
+            } catch(error) {
+                console.log("error:",error)
                 alert("画像アップロード失敗")
             }
     }
