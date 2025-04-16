@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const getSingleItem = async(id) => {
+export const getSingleItem = async(id) => {
     console.log(id)
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`)
     const jsonData = await response.json()
@@ -10,7 +10,7 @@ const getSingleItem = async(id) => {
     return singleItem
 }
 
-const ReadSingleItem = async({params}) => {
+export const ReadSingleItem = async({params}) => {
     console.log("params:",params)
     const singleItem = await getSingleItem(params.id)
     console.log("singleItem:",singleItem)
@@ -34,5 +34,3 @@ const ReadSingleItem = async({params}) => {
         </div>
     )
 }
-
-export default ReadSingleItem
