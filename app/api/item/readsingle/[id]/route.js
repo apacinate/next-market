@@ -7,7 +7,7 @@ export async function GET(request, context) {
     try{
         const { data, error }= await supabase.from("items").select().eq("id", params.id)
         if(error) throw new Error(error.message)
-        return NextResponse.json({message:"アイテム読み取り成功（シングル）",allItems: data})
+        return NextResponse.json({message:"アイテム読み取り成功（シングル）",singleItem: data})
     } catch(err) {
         return NextResponse.json({message:`アイテム読み取り失敗（シングル）:${err}`})
     }

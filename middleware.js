@@ -3,8 +3,8 @@ import { jwtVerify } from "jose"
 
 export async function middleware(request){
     console.log("ミドルウェア")
-    //const token = await request.headers.get("Autorization")?.split("")[1]
-    const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1bW15MkBnbWFpbC5jb20iLCJleHAiOjE3NDQzNTU2MTV9.KFZFE5pz4asyYv_a_Qkbr3aYXVSSUmBoFT6N4XhpXzY"
+    const token = await request.headers.get("Authorization")?.split(" ")[1]
+    console.log("token:",token)
     if(!token){
         return NextResponse.json({message:"トークンがありません"})
     }

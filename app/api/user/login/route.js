@@ -7,15 +7,14 @@ export async function POST(request) {
 
     try{
         const { data, error }= await supabase.from("users").select().eq("email", reqBody.email).single()
-        // if(error) throw new Error(error.message)
-        // console.log(data)
+
     if(!error){
         if(reqBody.password ==data.password){
             const secretKey =  new TextEncoder().encode("next-market-route-handlers")
             const payload = {email:reqBody.email,}
             const token = await new SignJWT(payload).setProtectedHeader({alg:"HS256"}).setExpirationTime("1d").sign(secretKey)
             console.log("token:", token)
-            return NextResponse.json({message:"ログイン成功",allItems: data})
+            return NextResponse.json({message:"ログイン成功",token: token})
         } else {
             return NextResponse.json({message:"ログインパスワードが間違っています"})
         }
