@@ -16,7 +16,7 @@ const useAuth = () => {
                 const secretKey = new TextEncoder().encode("next-market-route-handlers")
                 const decodedJwt = await jwtVerify(token, secretKey)
                 setLoginUserEmail(decodedJwt.payload.email)
-            }catch(error){
+            }catch{
                 router.push("/user/login")
             }
         }
