@@ -10,7 +10,7 @@ export const getSingleItem = async(id) => {
     return singleItem
 }
 
-export const ReadSingleItem = async({params}) => {
+const ReadSingleItem = async({params}) => {
     console.log("params:",params)
     const singleItem = await getSingleItem(params.id)
     console.log("singleItem:",singleItem)
@@ -34,3 +34,5 @@ export const ReadSingleItem = async({params}) => {
         </div>
     )
 }
+
+export default ReadSingleItem
