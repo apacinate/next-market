@@ -2,7 +2,7 @@ import MyPage from "./myPage"
 
 
 export const metadata = {
-  title:"登録ページ"
+  title:"登録ページ",
   description:"これは登録ページです",
 }
 
