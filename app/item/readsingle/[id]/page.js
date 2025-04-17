@@ -9,8 +9,8 @@ const ReadSingleItem = async({params}) => {
     return(
         <div className="grid-container-si">
             <title>{singleItem.title}</title>
-            <meta nam="description" content={singleItem.description}/>
-            
+            <meta name="description" content={singleItem.description}/>
+
             <div>
                 <Image src={singleItem[0].image} width={750} height={500} alt="item-image" priority/>
             </div>
