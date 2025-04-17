@@ -7,7 +7,10 @@ const ReadSingleItem = async({params}) => {
     const singleItem = await getSingleItem(params.id)
     console.log("singleItem:",singleItem)
     return(
-        <div className="grid-container-in">
+        <div className="grid-container-si">
+            <title>{singleItem.title}</title>
+            <meta nam="description" content={singleItem.description}/>
+            
             <div>
                 <Image src={singleItem[0].image} width={750} height={500} alt="item-image" priority/>
             </div>
